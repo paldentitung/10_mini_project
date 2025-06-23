@@ -1,0 +1,155 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --MainColor: #ff6867;
+  --BgColor: #fef3f1;
+  --FsColor: #333333;
+  --TaskBg: #fff4f2;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--BgColor);
+  color: var(--FsColor);
+}
+body.active {
+  --BgColor: #1a1a1a;
+  --FsColor: #707070;
+  --MainColor: #ff6867; /* You can also update this if needed */
+  background-color: var(--BgColor);
+  color: var(--FsColor);
+}
+
+#mode i{
+ font-size: 1.3rem;
+}
+.container {
+  background-color: var(--BgColor);
+  color: var(--FsColor);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+  border: 2px solid var(--MainColor);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.sub-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: clamp(1rem, 1.8rem, 2.5rem);
+  color: var(--MainColor);
+  margin-bottom: 20px;
+}
+
+.task-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 16/9;
+}
+
+.task-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-input input {
+  width: 100%;
+  max-width: 350px;
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid var(--MainColor);
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.task-input input:focus {
+  outline: none;
+  box-shadow: 0 0 8px var(--MainColor);
+  border: 2px solid var(--MainColor);
+}
+
+.task-input i {
+  color: var(--MainColor);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.task-input i:hover {
+  background-color: var(--MainColor);
+  color: white;
+}
+
+.tasked-list {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.tasked-list li {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 10px;
+
+  background-color: var(--TaskBg);
+  border-left: 5px solid var(--MainColor);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.tasked-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.active-li button {
+  margin-left: auto;
+  background: var(--MainColor);
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.active-li button:hover {
+  transform: scale(1.1);
+  background-color: #ff3c3b;
+}
+

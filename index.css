@@ -1,0 +1,151 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* index.css */
+body {
+  background: linear-gradient(135deg, #1b2846, #0d1a2d);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.container {
+  width: 100%;
+  max-width: 320px;
+  padding: 20px;
+  background: rgba(15, 30, 55, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #a2b4dd;
+  text-shadow: 0 0 8px rgba(162, 180, 221, 0.5);
+}
+
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-container {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 25px 15px;
+  background: rgba(22, 38, 63, 0.7);
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  color: white;
+  text-align: right;
+  caret-color: #a2b4dd;
+}
+
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.buttons-container > div {
+  display: contents;
+}
+
+.buttons-container button {
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgba(162, 180, 221, 0.15);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-container button:hover {
+  background: rgba(162, 180, 221, 0.3);
+  transform: translateY(-2px);
+}
+
+.buttons-container button:active {
+  transform: translateY(1px);
+}
+
+/* Operator buttons */
+.buttons-container button:nth-child(3),
+.buttons-container button:nth-child(4),
+.buttons-container button:nth-child(8),
+.buttons-container button:nth-child(12),
+.buttons-container button:nth-child(16) {
+  background: rgba(101, 130, 203, 0.3);
+  font-weight: 500;
+}
+
+.buttons-container button:nth-child(3):hover,
+.buttons-container button:nth-child(4):hover,
+.buttons-container button:nth-child(8):hover,
+.buttons-container button:nth-child(12):hover,
+.buttons-container button:nth-child(16):hover {
+  background: rgba(101, 130, 203, 0.5);
+}
+
+/* AC and % buttons */
+.buttons-container button:nth-child(1),
+.buttons-container button:nth-child(2) {
+  background: rgba(203, 101, 101, 0.3);
+}
+
+.buttons-container button:nth-child(1):hover,
+.buttons-container button:nth-child(2):hover {
+  background: rgba(203, 101, 101, 0.5);
+}
+
+/* = button */
+.buttons-container button:nth-child(16) {
+  grid-column: span 1;
+  aspect-ratio: 1/1;
+  background: rgba(74, 181, 126, 0.3);
+}
+
+.buttons-container button:nth-child(16):hover {
+  background: rgba(74, 181, 126, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  .container {
+    max-width: 280px;
+    padding: 15px;
+  }
+
+  .input-container input {
+    padding: 20px 10px;
+    font-size: 1.8rem;
+  }
+
+  .buttons-container button {
+    font-size: 1.1rem;
+  }
+}
